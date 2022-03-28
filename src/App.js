@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './App.css';
 import Test from './components/Test.js';
 import Movie from './components/Movie.js';
 import './App.css';
@@ -44,7 +45,7 @@ const App = () => {
             {myVar}
             {movies.map((movie, index) => {
                 console.log(movie);
-                return <Movie key={index} myTitle={movie.title} myId={movie.episode_id}  />;
+                return <Movie key={index} title={movie.title} episode_id={movie.episode_id}  />;
             })}
             <Test myProp='hello' />
             {/*{[1, 2, 3, 4].map(element => <Test key={element}*/}
