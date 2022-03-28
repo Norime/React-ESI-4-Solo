@@ -42,12 +42,12 @@ const App = () => {
         <div className="App">
             <button onClick={onClickHandler}>Click Mec</button>
             {myVar}
-            {movies.map((movie) => {
+            {movies.map((movie, index) => {
                 console.log(movie);
-                return <Movie myTitle={movie.title} myId={movie.episode_id}  />;
+                return <Movie key={index} myTitle={movie.title} myId={movie.episode_id}  />;
             })}
             <Test myProp='hello' />
-            {[1,2,3,4]}
+            {/*{[1, 2, 3, 4].map(element => <Test key={element}*/}
         </div>
     );
 }

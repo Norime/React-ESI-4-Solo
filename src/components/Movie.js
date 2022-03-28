@@ -7,7 +7,6 @@ const Movie = (props) => {
     return <div>Movie:
         <span> {myId}</span>
         <span> {myTitle}</span>
-        
     </div>;
 }
 
