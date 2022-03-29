@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import './App.css';
 import Test from './components/Test.js';
 import Movie from './components/Movie.js';
-import './App.css';
+import AppModule from "./App.module.css";
 
 const App = () => {
     const [myVar, setMyVar] = useState('Hello World');
@@ -40,15 +39,16 @@ const App = () => {
     }
 
     return (
-        <div className="App">
+        <div className={AppModule.App}>
             <button onClick={onClickHandler}>Click Mec</button>
             {myVar}
-            {movies.map((movie, index) => {
-                console.log(movie);
-                return <Movie key={index} title={movie.title} episode_id={movie.episode_id}  />;
-            })}
+            <div className={AppModule.cardContainer}>
+                {movies.map((movie, index) => {
+                    console.log(movie);
+                    return <Movie key={index} title={movie.title} episode_id={movie.episode_id}  />;
+                })}
+            </div>
             <Test myProp='hello' />
-            {/*{[1, 2, 3, 4].map(element => <Test key={element}*/}
         </div>
     );
 }
